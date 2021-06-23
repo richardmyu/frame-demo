@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>bug</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <label>“Mustache”语法 (双大括号)</label>
+    <p v-once>counter: {{++counter}}</p>
+    <p>counter: {{++counter}}</p>
+    <button v-on:click="changeCounter">change counter</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        counter: 0
+      },
+      methods: {
+        changeCounter() {
+          this.counter++;
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
