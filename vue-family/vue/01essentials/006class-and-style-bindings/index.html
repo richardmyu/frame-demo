@@ -10,17 +10,25 @@
 
 <body>
   <div id="app">
+    <!-- 动态切换 -->
     <div :class="{active:isActive}">one</div>
+    <!-- 多字段来动态切换 -->
     <div class="static" :class="{active:isActive,'text-danger':hasError}">two</div>
+    <!-- data.obj -->
     <div :class="classObj">three</div>
+    <!-- computed data -->
     <div :class="claObj">four</div>
+    <!-- 数组语法 -->
     <div :class="[activeClass,errorClass]">five-ary</div>
     <hr/>
+    <!-- inline style -->
     <div :style="{color:activeColor,fontSize:fontSize+'px'}">style one</div>
+    <!-- good -->
     <div :style="styleObj">style two obj</div>
+    <!-- ary style -->
     <div :style="[baseStyle,overStyle]">style three ary</div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 
   <script>
     let vm = new Vue({

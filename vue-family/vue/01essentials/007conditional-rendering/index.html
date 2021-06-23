@@ -35,19 +35,31 @@
     <hr>
     <template v-if="loginType === 'username'">
       <label>Username</label>
-      <br/>
+      <br />
       <input placeholder="Enter your username">
     </template>
     <template v-else>
       <label>Email</label>
-      <br/>
+      <br />
       <input placeholder="Enter your email address">
+    </template>
+    <button @click="fn">Toggle type</button>
+    <hr>
+    <template v-if="loginType === 'username'">
+      <label>Username</label>
+      <br />
+      <input placeholder="Enter your username" key="username">
+    </template>
+    <template v-else>
+      <label>Email</label>
+      <br />
+      <input placeholder="Enter your email address" key="email">
     </template>
     <button @click="fn">Toggle type</button>
     <hr>
     <h1 v-show="isShow">Hello world</h1>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 
   <script>
     let vm = new Vue({

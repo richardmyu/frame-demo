@@ -22,7 +22,7 @@
     <button v-for="b in isBut" v-bind:disabled="b">Button</button>
     <!-- 此处会有布尔自转化：若值为 null、undefined、false 或 未定义的变量（值为 undefined），都为 false，即 disabled 特性不会添加到元素上；若值为 true 或 有定义的变量（变量在 data 中存在，暗示为 true，除非指明值为 null、undefined、false，注意加引号作字符串解释），都为 true，即将 disabled 特性加到元素上。 -->
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 
   <script>
     let vm = new Vue({

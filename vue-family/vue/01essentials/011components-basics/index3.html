@@ -14,7 +14,7 @@
       <blog-post v-for="post in posts" :key="post.id" :post="post" @enlarge-text="postFontSize+=$event" @ensmall-text="onEnsmallText"></blog-post>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script>
     // 有的时候用一个事件来抛出一个特定的值是非常有用的。这时可以使用 $emit 的第二个参数来提供这个值
     // 当在父级组件监听这个事件的时候，我们可以通过 $event 访问到被抛出的这个值

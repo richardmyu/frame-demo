@@ -18,6 +18,7 @@
     </p>
     <p>{{answer}}</p>
     <p>在这个示例中，使用 watch 选项允许我们执行异步操作 (访问一个 API)，限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态。这些都是计算属性无法做到的。</p>
+    <button @click="handleStop">stop</button>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
@@ -30,12 +31,12 @@
         question: '',
         answer: 'I connot give you an answer until you ask a question!'
       },
-      watch: {
-        question: function (newQuestion, oldQuestion) {
-          this.answer = 'Waiting for you to stop typing...';
-          this.debouncedGetAnswer();
-        }
-      },
+      // watch: {
+      //   question: function (newQuestion, oldQuestion) {
+      //     this.answer = 'Waiting for you to stop typing...';
+      //     this.debouncedGetAnswer();
+      //   }
+      // },
       created: function () {
         this.debouncedGetAnswer = _.debounce(this.getAnswer, 500)
 
@@ -55,9 +56,21 @@
             .catch(function (error) {
               vm.answer = 'Error! Could not reach the API. ' + error
             })
+        },
+        handleStop() {
+          console.log('stop');
+          unwatch();
         }
       }
     })
+
+    let unwatch = vm.$watch('question', function (nV, oV) {
+      this.answer = 'Waiting for you to stop typing...';
+      this.debouncedGetAnswer();
+    })
+    // setTimeout(() => {
+    //   unwatch()
+    // }, 2000)
   </script>
 </body>
 

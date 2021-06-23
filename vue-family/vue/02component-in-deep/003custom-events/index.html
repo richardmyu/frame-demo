@@ -12,7 +12,7 @@
   <div id="app">
     <base-checkbox v-model="lovingVue"></base-checkbox>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script>
     Vue.component('base-checkbox', {
       model: {
@@ -23,7 +23,7 @@
         checked: Boolean
       },
       template: `
-      <input 
+      <input
         type="checkbox"
         v-bind:checked="checked"
         v-on:change="$emit('change',$event.target.checked)"

@@ -19,7 +19,7 @@
     <br><br>
     <base-input-t v-on:focus.native="onFocus"></base-input-t>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script>
     Vue.component('base-input', {
       inheritAttrs: false,
@@ -27,7 +27,7 @@
       template: `
       <label>
         {{label}}
-        <input 
+        <input
           v-bind="$attrs"
           v-bind:value="value"
           v-on:input="$emit('input', $event.target.value)"
@@ -38,7 +38,7 @@
     Vue.component('base-button', {
       inheritAttrs: false,
       template: `
-        <button 
+        <button
           v-bind="$attrs"
           v-on:click="$emit('add')"
         >add</button>
@@ -60,7 +60,7 @@
       template: `
       <label>
         {{label}}
-        <input 
+        <input
           v-bind="$attrs"
           v-bind:value="value"
           v-on="inputListeners"

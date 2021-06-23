@@ -20,7 +20,7 @@
     <test-o :initial-counter="testA[0]"></test-o>
     <test-t v-for="(si,index) of size" :key="index+'size'" :size="si"></test-t>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script>
     // 这个 prop 用来传递一个初始值；这个子组件接下来希望将其作为一个本地的 prop 数据来使用。在这种情况下，最好定义一个本地的 data 属性并将这个 prop 用作其初始值
     Vue.component('TestO', {
