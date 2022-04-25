@@ -6,8 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <!-- v16 v17 会有 bug: -->
+  <!-- Uncaught TypeError: ReactDOM.createRoot is not a function -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 
 <body>
@@ -16,7 +19,7 @@
   <p>React is loaded as a script tag.</p>
   <div id="like_button_container"></div>
 
-  <script src="./like_button.js"></script>
+  <script type="text/babel" src="./like_button_jsx.js"></script>
 </body>
 
 </html>
